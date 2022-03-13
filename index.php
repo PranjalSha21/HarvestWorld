@@ -1,48 +1,6 @@
-<?php include 'include/header.php'; ?>
+<?php include('include/header.php'); ?>
+<?php include('include/navbar.php'); ?>
 
-<section>
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-              <div class="container">
-                <a class="navbar-brand" href="#">COMPIFY</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto ml-auto">
-                    <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="home.aspx">Home</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Queries?
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Products
-                      </a>
-                    </li>
-                      <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="cart.aspx">Cart
-                          </a>
-                       </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Build Your own!
-                      </a>
-                    </li>
-                    <li class="nav-item dropdown ">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        login
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-        </div>
-    </section>
 
      <section>
         <div>
@@ -186,12 +144,32 @@
          <hr />
 
     </section>
-    
+    <section class="section" id="recently_added">
+        <div class="row justify-content-center">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div >
+                    <h1 class="text-center">About Us</h1>
+                    <br />
+                    <br />
+                    <p class="text-center">We at COMPIFY (www.compify.in) pride in completing 25 years of our existence. Known in the IT market as a innovator of technology, Our Journey has truly been justified to our name.</p>
+                    <p class="text-center">COMPIFY is dedicated to 100% customer delight ensuring that everything from placing your order to delivering it right to your doorstep is smooth and hassle-free. When it comes to online transactions, COMPIFY ensures that all credit/debit card and net banking transactions are done through secure and trusted gateways. All your bank details are safe and secure, and will not be shared with any third-party.</p>
+                    <p class="text-center">COMPIFY is one of the leading IT distribution companies in KARNATAKA operating since its inception in 1993.</p>
+                    <p class="text-center">The company is heading to provide full range of PC components to all customers through its wide sales channels</p>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+    </section>
 
 
 
 
-<?php include 'include/footer.php'; ?>
+<?php include('include/footer.php'); ?>
   
 
 
