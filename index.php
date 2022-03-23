@@ -1,7 +1,7 @@
 <?php include('include/header.php'); ?>
 <?php include('include/navbar.php'); ?>
 
-
+<!-- make changes here and push it and make sure to create a PR -->
      <section>
         <div>
             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
