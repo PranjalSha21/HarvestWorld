@@ -18,7 +18,7 @@
               <div class="card-counter primary">
                 <i class="fa fa-shopping-cart"></i>
                
-                  <label ID="Label1" CssClass="count-numbers" runat="server" Text="12"></label>
+                  <label ID="Label1" CssClass="count-numbers" Text="12"></label>
                 <span class="count-name">Products</span>
               </div>
             </div>
@@ -26,7 +26,7 @@
             <div class="col-md-6">
               <div class="card-counter danger">
                 <i class="fa fa-database"></i>
-                <label ID="Label2" CssClass="count-numbers" runat="server" Text="12"></label>
+                <label ID="Label2" CssClass="count-numbers" Text="12"></label>
                 <span class="count-name">Orders</span>
               </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="col-md-6">
               <div class="card-counter success">
                 <i class="fa fa-ticket"></i>
-                <label ID="Label3" CssClass="count-numbers" runat="server" Text="12"></label>
+                <label ID="Label3" CssClass="count-numbers" Text="12"></label>
                 <span class="count-name">Coupons</span>
               </div>
             </div>
@@ -42,7 +42,7 @@
             <div class="col-md-6">
               <div class="card-counter info">
                 <i class="fa fa-users"></i>
-                <label ID="Label4" CssClass="count-numbers" runat="server" Text="12"></label>
+                <label ID="Label4" CssClass="count-numbers" Text="12"></label>
                 <span class="count-name">Users</span>
               </div>
             </div>
