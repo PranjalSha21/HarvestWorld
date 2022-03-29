@@ -17,7 +17,7 @@
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="login.php" aria-expanded="false">
+                      <a class="nav-link" href="products.php" aria-expanded="false">
                         Products
                       </a>
                     </li>
