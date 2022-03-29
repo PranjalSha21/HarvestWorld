@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2022 at 05:26 PM
+-- Generation Time: Mar 29, 2022 at 04:49 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,6 +24,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `quantity` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(11) NOT NULL DEFAULT 'CART',
+  `total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -35,6 +51,17 @@ CREATE TABLE `products` (
   `product_quantity` int(11) DEFAULT NULL,
   `product_description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_name`, `product_price`, `product_image`, `product_quantity`, `product_description`) VALUES
+(31, 'test', 100, './images/products/Untitled design (2).png', 10, ' testign new product'),
+(32, 'adsads', 33, './images/products/Yellow and Orange Modern Education Art Therapy YouTube Thumbnail (1).png', 323, ' adsasd'),
+(33, 'sdfsdf', 2332, './images/products/1614854104504.jfif', 332, ' sdfsdf'),
+(34, 'asdasd', 123, './images/products/Untitled design (2).png', 123, ' asdasd'),
+(35, '123123', 123, './images/products/Copy of Yellow and Orange Modern Education Art Therapy YouTube Thumbnail (1).png', 13, ' qweweqwe');
 
 -- --------------------------------------------------------
 
@@ -114,6 +141,12 @@ INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `address`, `use
 --
 
 --
+-- Indexes for table `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -142,10 +175,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `cart`
+--
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `queries`
