@@ -43,15 +43,14 @@
     }
     function addtocart(id,price){
         var quantity = parseInt(document.getElementById('product_quantity'+id).textContent);
-        var total = quantity * price;
-        console.log(id,quantity,price,total);
+        console.log(id,quantity,price);
         $.ajax({
             type: "POST",
             url: "./Database/order.php",
             data: {
                 product_id: id,
                 quantity: quantity,
-                total: total,
+                price: price,
                 addToCart: true
             },
             success: function (data) {
