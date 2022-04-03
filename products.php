@@ -42,18 +42,18 @@
         current_quantity.innerText = (+current_quantity.innerText) + 1;
     }
     function addtocart(id,price){
-        var quantity = document.getElementById('product_quantity'+id);
+        var quantity = parseInt(document.getElementById('product_quantity'+id).textContent);
         var total = quantity * price;
+        console.log(id,quantity,price,total);
         $.ajax({
             type: "POST",
             url: "./Database/order.php",
-            data: `{
+            data: {
                 product_id: id,
-                user_id: 1,
                 quantity: quantity,
                 total: total,
-                addToCard: true
-            }`,
+                addToCart: true
+            },
             success: function (data) {
                 alert(data);
             },
