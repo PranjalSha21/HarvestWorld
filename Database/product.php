@@ -54,7 +54,7 @@ if(isset($_POST['update_product']))
     }
 
 }
-
+// fc
 if(intval($_GET['id']) != null)
 {
     $p_id = intval($_GET['id']);
