@@ -93,7 +93,7 @@
     <!-- Nav Item - Pages Collapse Menu -->
 
     <li class="nav-item">
-        <a class="nav-link" href="cart.aspx">
+        <a class="nav-link" href="cart.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Cart</span></a>
     </li>
