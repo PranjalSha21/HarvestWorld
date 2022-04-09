@@ -31,7 +31,7 @@ function updateOrder($payment_id){
     $orderID = getPreviousOrderId();
     $orderid = intval($orderID) + 1;
     $id = $_SESSION['id'];
-    $NewDate=Date('d-m-Y', strtotime('+3 days'));
+    $NewDate=date('Y-m-d',strtotime('+3 days'));
     $dbcon = mysqli_connect("localhost","root","","harvest_world");
     $get_products = "SELECT SUM(quantity) as quantity,total,product_image,product_name,cart_id,product_id FROM cart WHERE user_id='$id' AND status='CART' GROUP BY product_id";
     $result = mysqli_query($dbcon, $get_products);
@@ -67,6 +67,24 @@ if(isset($_POST['payment'])){
     $_SESSION['status'] =  "success";
     echo json_encode("quant");
     exit;
+}
+
+if(intval($_GET['delete_id']) != null)
+{
+    $d_id = intval($_GET['delete_id']);
+    $user_id = $_SESSION['id']; 
+    $delete_query = "DELETE FROM orders WHERE order_id = '$d_id' ";
+    if(mysqli_query($dbcon,$delete_query)){
+        $_SESSION['message'] = "Order Canceled Successfully";
+        $_SESSION['status'] = "success";
+        header("Location: ../vieworders.php");
+        exit();
+    } else {
+        $_SESSION['message'] = "Order Failed to Cancel";
+        $_SESSION['status'] = "error";
+        header("Location: ../vieworders.php");
+        exit();
+    }
 }
 
 ?>

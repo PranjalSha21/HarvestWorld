@@ -99,7 +99,7 @@
     </li>
     
     <li class="nav-item">
-        <a class="nav-link" href="orders.aspx">
+        <a class="nav-link" href="vieworders.php">
             <i class="fa fa-shopping-cart"></i>
             <span>Orders</span></a>
     </li>
