@@ -18,12 +18,12 @@
                         ?>
                         <div class="mb-3">
                                 <label class="form-label">Model Name</label>
-                                <input type="text" name="m_name" class="form-control" value="<?php echo $row['name'] ?>" aria-describedby="emailHelp">
+                                <input type="text" name="m_name" required class="form-control" value="<?php echo $row['name'] ?>" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Description</label>
                                 <Textarea type="text" name="m_description" class="form-control"TextMode="MultiLine"><?php echo $row['description'] ?></textarea>
-                                <input type="hidden" name="m_id" value="<?php echo $id ?>" class="form-control" aria-describedby="emailHelp">
+                                <input type="hidden" name="m_id" required value="<?php echo $id ?>" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Location</label>

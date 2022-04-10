@@ -10,23 +10,23 @@
                         <br>
                         <div class="mb-3">
                                 <label class="form-label">Product Name</label>
-                                <input type="text" name="p_name" class="form-control" aria-describedby="emailHelp">
+                                <input type="text" name="p_name" required class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Description</label>
-                                <Textarea type="text" name="p_description" class="form-control" TextMode="MultiLine"> </textarea>
+                                <Textarea type="text" name="p_description" required class="form-control" TextMode="MultiLine"> </textarea>
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" name="p_quantity" class="form-control" aria-describedby="emailHelp">
+                                <input type="number" name="p_quantity" required class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Price</label>
-                                <input type="number" name="p_price" class="form-control" aria-describedby="emailHelp">
+                                <input type="number" name="p_price" required class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Image</label>
-                                <input type="file" name="p_image" class="form-control" aria-describedby="emailHelp">
+                                <input type="file" name="p_image" accept="image/*" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <button type="submit" class="btn btn-success" name="add_product">Submit</button>
                 </form>

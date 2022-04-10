@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <form action="Database/queriesdb.php" method="post">
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Leave a comment here" name="query" id="floatingTextarea2" style="height: 100px"></textarea>
+                <textarea class="form-control" required placeholder="Leave a comment here" name="query" id="floatingTextarea2" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Queries</label>
             </div><br>
             <div class="d-grid gap-2">
@@ -27,7 +27,7 @@
         <div class="col-md-12">
 
             <?php 
-                $get_queries = "SELECT * FROM queries";
+                $get_queries = "SELECT * FROM queries ORDER BY id DESC";
                 $dbcon = mysqli_connect("localhost","root","","harvest_world");
                 $result = mysqli_query($dbcon, $get_queries);
                 if (mysqli_num_rows($result) >= 1) {
@@ -36,6 +36,7 @@
                         <div class="card mb-3">
                             <div class="card-header">
                                 <?= $row['user_name']; ?>
+                                <span class="float-right"><?= $row['time']; ?></span>
                             </div>
                             <div class="card-body">
                                 <p class="card-title"><?php echo $row['query']; ?></p>
@@ -47,7 +48,7 @@
                                     <div class="col-md-12 px-5">
                                         <form action="Database/queriesdb.php" method="post">
                                             <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Leave a comment here" name="reply_query" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <textarea required class="form-control" placeholder="Leave a comment here" name="reply_query" id="floatingTextarea2" style="height: 100px"></textarea>
                                                 <label for="floatingTextarea2">Queries</label>
                                             </div><br>
                                             <div class="gap-2">
