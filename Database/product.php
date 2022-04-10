@@ -11,7 +11,7 @@ if(isset($_POST['add_product']))
     print_r($_FILES);
     $folder_path = "./images/products/";
     $folder_path = $folder_path.basename($p_image);
-    $uploadpath = "D:\Softwares\Sahal\\XAMPP\htdocs\Harvest-World\HarvestWorld\images\products\\";
+    $uploadpath = 'C:\xampp\htdocs\HarvestWorld\images\products\\';
     $uploadpath = $uploadpath.basename($p_image);
     $add_query = "INSERT INTO products (product_name,product_price,product_image,product_quantity,product_description) VALUES ('$p_name','$p_price','$folder_path','$p_quantity','$p_description')";
     if(mysqli_query($dbcon,$add_query)){

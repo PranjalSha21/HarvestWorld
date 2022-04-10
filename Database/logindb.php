@@ -18,17 +18,15 @@ if(isset($_POST['login']))
                 header("Location: ../index.php");
                 exit();
             } else {
-                header("Location: ../admin/dashboard.php");
+                header("Location: ../dashboard.php");
                 exit();
             }
         
-            }else{
-                header("Location: ../index.php");
-                exit();
-            }
-    }else{
-
-    }
+        }else{
+            header("Location: ../index.php");
+            exit();
+        }
+}
 
 if(isset($_POST['register']))
 {

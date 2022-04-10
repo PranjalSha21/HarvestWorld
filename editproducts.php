@@ -1,9 +1,6 @@
 <?php include("include/header.php"); ?>
 <?php include("include/adminsidebar.php"); ?>
 
-<h1 class="text-center mt-5">Add Products</h1>
-<br>
-
 <div class="table-responsive">
   <table class="table align-middle">
     <thead>
@@ -28,7 +25,7 @@
     <tbody>
       <tr class="align-centre">
         <td><?php echo $row['product_id'] ?></td>
-        <td><img src="<?php echo $row['product_image'] ?>"  width="150" height="150"></td>
+        <td><img src="<?php echo $row['product_image'] ?>"  width="100" height="100"></td>
         <td ><?php echo $row['product_name'] ?></td>
         <td ><?php echo $row['product_description'] ?></td>
         <td ><?php echo $row['product_quantity'] ?></td>

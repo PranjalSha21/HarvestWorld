@@ -73,7 +73,7 @@ if(intval($_GET['delete_id']) != null)
 {
     $d_id = intval($_GET['delete_id']);
     $user_id = $_SESSION['id']; 
-    $delete_query = "DELETE FROM orders WHERE order_id = '$d_id' ";
+    $delete_query = "UPDATE orders SET status = 'CANCELLED' WHERE order_id = '$d_id' ";
     if(mysqli_query($dbcon,$delete_query)){
         $_SESSION['message'] = "Order Canceled Successfully";
         $_SESSION['status'] = "success";

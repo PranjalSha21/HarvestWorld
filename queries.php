@@ -39,8 +39,8 @@
                             </div>
                             <div class="card-body">
                                 <p class="card-title"><?php echo $row['query']; ?></p>
-                                <a data-toggle="collapse" href="#collapse<?= $row['id']; ?>" class="btn btn-primary">Reply</a>
-                                <a data-toggle="collapse" href="#collapseviewreply<?php echo $row['id']; ?>">respons</a>
+                                <a data-toggle="collapse" href="#collapseviewreply<?php echo $row['id']; ?>">Comments</a>
+                                <a data-toggle="collapse" href="#collapse<?= $row['id']; ?>">Reply</a>
                             </div>
                             <div class="collapse" id="collapse<?php echo $row['id'];?>">
                                 <div class="row">
