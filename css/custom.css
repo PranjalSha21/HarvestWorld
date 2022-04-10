@@ -37,10 +37,10 @@
 }
 .card-counter {
     box-shadow: 2px 2px 10px #DADADA;
-    margin: 10px;
-    padding: 30px 30px;
+    margin: 5px;
+    padding: 20px 10px;
     background-color: #fff;
-    height: 300px;
+    height: 200px;
     border-radius: 5px;
     transition: .3s linear all;
 }
@@ -71,7 +71,7 @@
 }
 
 .card-counter i {
-    font-size: 9em;
+    font-size: 5em;
     opacity: 0.2;
 }
 
@@ -85,11 +85,11 @@
 
 .card-counter .count-name {
     position: absolute;
-    right: 75px;
+    right: 35px;
     top: 65px;
     font-style: italic;
     text-transform: capitalize;
     opacity: 0.5;
     display: block;
-    font-size: 28px;
+    font-size: 18px;
 }

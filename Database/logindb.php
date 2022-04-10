@@ -48,4 +48,23 @@ if(isset($_POST['register']))
 
 }
 
+if(isset($_POST['update']))
+{   
+    $id = $_SESSION['id'];
+    $name= $_POST['name'];
+    $phone= $_POST['phone'];
+    $email= $_POST['email'];
+    $address= $_POST['address'];
+    $update_query = "UPDATE users SET name = '$name',phone = '$phone' ,email = '$email',address = '$address' WHERE id = $id";
+    if(mysqli_query($dbcon,$update_query))
+    {
+        header("Location: ../profile.php");
+    }
+    else
+    {
+        header("Location: ../index.php");
+    }
+
+}
+
 ?>
