@@ -1,7 +1,7 @@
 <?php include("include/header.php"); ?>
-<?php include("include/usersidebar.php"); ?>
+<?php include("include/adminsidebar.php"); ?>
 <?php 
-    if($_SESSION['user_type'] != 'USER'){
+    if($_SESSION['user_type'] != 'ADMIN'){
         $_SESSION['message'] = "Log in to continue";
         $_SESSION['status'] = "error";
         header("Location: ./login.php");
@@ -23,7 +23,6 @@
         </thead>
         <tbody>
         <?php 
-            $user_id = $_SESSION['id'];
             $order_id = $_GET['id'];
             $get_order_details = "SELECT * FROM orders WHERE order_id = '$order_id'";
             $dbcon = mysqli_connect("localhost","root","","harvest_world");

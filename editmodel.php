@@ -1,6 +1,13 @@
 <?php include("include/header.php"); ?>
+<?php 
+    if($_SESSION['user_type'] != 'ADMIN'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+    ?>
 <?php include("include/adminsidebar.php"); ?>
-
 <h1 class="text-center mt-5">Edit Models</h1>
 <br>
 <div class="card mx-5 mb-5">
@@ -18,11 +25,11 @@
                         ?>
                         <div class="mb-3">
                                 <label class="form-label">Model Name</label>
-                                <input type="text" name="m_name" required class="form-control" value="<?php echo $row['name'] ?>" aria-describedby="emailHelp">
+                                <input type="text" required name="m_name" required class="form-control" value="<?php echo $row['name'] ?>" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Description</label>
-                                <Textarea type="text" name="m_description" class="form-control"TextMode="MultiLine"><?php echo $row['description'] ?></textarea>
+                                <Textarea type="text" required name="m_description" class="form-control"TextMode="MultiLine"><?php echo $row['description'] ?></textarea>
                                 <input type="hidden" name="m_id" required value="<?php echo $id ?>" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">

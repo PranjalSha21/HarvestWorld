@@ -1,5 +1,13 @@
 <?php include("include/header.php"); ?>
 <?php include("include/usersidebar.php"); ?>
+<?php 
+    if($_SESSION['user_type'] != 'USER'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 <h1 class="text-center mt-5">
     My Queries
 </h1>
@@ -30,7 +38,7 @@
                                     <div class="col-md-12 px-5">
                                         <form action="Database/queriesdb.php" method="post">
                                             <div class="form-floating">
-                                                <textarea class="form-control" placeholder="Leave a comment here" name="reply_query" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <textarea required class="form-control" placeholder="Leave a comment here" name="reply_query" id="floatingTextarea2" style="height: 100px"></textarea>
                                                 <label for="floatingTextarea2">Queries</label>
                                             </div><br>
                                             <div class="gap-2">

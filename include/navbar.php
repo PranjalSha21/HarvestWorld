@@ -26,7 +26,7 @@
                           </a>
                        </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="models.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a class="nav-link" href="models.php"aria-expanded="false" >
                         Models
                       </a>
                     </li>

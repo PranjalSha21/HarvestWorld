@@ -1,6 +1,13 @@
 <?php include("include/header.php"); ?>
 <?php include("include/usersidebar.php"); ?>
-
+<?php 
+    if($_SESSION['user_type'] != 'USER'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 
 <div class="table-responsive">
   <table class="table align-middle">

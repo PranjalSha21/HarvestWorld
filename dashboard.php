@@ -1,5 +1,14 @@
 <?php include("include/header.php"); ?>
+<?php 
+    if($_SESSION['user_type'] != 'ADMIN'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 <?php include("include/adminsidebar.php"); ?>
+
     <!-- Topbar -->
     <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 

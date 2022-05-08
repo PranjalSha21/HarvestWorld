@@ -1,6 +1,13 @@
 <?php include("include/header.php"); ?>
 <?php include("include/usersidebar.php"); ?>
-
+<?php 
+    if($_SESSION['user_type'] != 'USER'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 <h1 class="text-center mt-5">My Cart</h1>
 <br>
 <div class="container">

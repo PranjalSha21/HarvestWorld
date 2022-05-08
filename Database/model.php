@@ -12,7 +12,7 @@ if(isset($_POST['add_model']))
     $tempname = $_FILES['m_image']["tmp_name"];    
     $folder_path = "./images/models/";
     $folder_path = $folder_path.basename($m_image);
-    $uploadpath = 'C:\xampp\htdocs\HarvestWorld\images\models\\';
+    $uploadpath = 'D:\Xampp\htdocs\HarvestWorld\images\models\\';
     $uploadpath = $uploadpath.basename($m_image);
     $add_query = "INSERT INTO harvest_model (model_image,model_name,model_description) VALUES ('$folder_path','$m_name','$m_description')";
     if(mysqli_query($dbcon,$add_query)){

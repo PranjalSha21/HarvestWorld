@@ -1,6 +1,13 @@
 <?php include("include/header.php"); ?>
+<?php 
+    if($_SESSION['user_type'] != 'ADMIN'){
+            $_SESSION['message'] = "Log in to continue";
+            $_SESSION['status'] = "error";
+            header("Location: ./login.php");
+            exit();
+        }
+        ?>
 <?php include("include/adminsidebar.php"); ?>
-
 <h1 class="text-center mt-5">Edit Product</h1>
 <br>
 <div class="card mx-5 mb-5">
@@ -18,19 +25,19 @@
                         ?>
                         <div class="mb-3">
                                 <label class="form-label">Product Name</label>
-                                <input type="text" name="p_name" required class="form-control" value="<?php echo $row['product_name'] ?>" aria-describedby="emailHelp">
+                                <input type="text" required name="p_name" required class="form-control" value="<?php echo $row['product_name'] ?>" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Description</label>
-                                <Textarea type="text" name="p_description" required class="form-control" TextMode="MultiLine"><?php echo $row['product_description'] ?></textarea>
+                                <Textarea type="text" required name="p_description" required class="form-control" TextMode="MultiLine"><?php echo $row['product_description'] ?></textarea>
                         </div>
                         <div class="mb-3">
                                 <label class="form-label">Quantity</label>
-                                <input type="number" name="p_quantity" required class="form-control" value="<?php echo $row['product_quantity'] ?>" aria-describedby="emailHelp">
+                                <input type="number" required name="p_quantity" required class="form-control" value="<?php echo $row['product_quantity'] ?>" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
                                 <label for="exampleInputEmail1"  class="form-label">Price</label>
-                                <input type="number" name="p_price" required class="form-control" value="<?php echo $row['product_price'] ?>" aria-describedby="emailHelp">
+                                <input type="number" required name="p_price" required class="form-control" value="<?php echo $row['product_price'] ?>" aria-describedby="emailHelp">
                                 <input type="hidden" name="p_id" value="<?php echo $id ?>" class="form-control" aria-describedby="emailHelp">
                         </div>
                         <button type="submit" class="btn btn-success" name="update_product">Update</button>

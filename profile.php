@@ -1,6 +1,13 @@
 <?php include("include/header.php"); ?>
 <?php include("include/usersidebar.php"); ?>
-
+<?php 
+    if($_SESSION['user_type'] != 'USER'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 <div class="row justify-content-center">
             <div class="col-md-10 my-5 table-responsive">
                 <div class="card">
@@ -20,21 +27,21 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <label>Name</label>
-                                                        <input type="text" name="name" value="<?php echo $row['name']; ?>" class="form-control"/>
+                                                        <input type="text" name="name" required value="<?php echo $row['name']; ?>" class="form-control"/>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label>Email</label>
-                                                        <input type="email" name="email" value="<?php echo $row['email']; ?>"  class="form-control"/>
+                                                        <input type="email" name="email" required value="<?php echo $row['email']; ?>"  class="form-control"/>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <label>Phone</label>
-                                                        <input type="number" name="phone" value="<?php echo $row['phone']; ?>"  class="form-control"/>
+                                                        <input type="number" name="phone" min="1111111111" max="9999999999" required value="<?php echo $row['phone']; ?>"  class="form-control"/>
                                                     </div>
                                                     <div class="col-md-12">
                                                         <label>Address</label>
-                                                        <textarea class="form-control" name="address"><?php echo $row['address']; ?></textarea>
+                                                        <textarea class="form-control" required name="address"><?php echo $row['address']; ?></textarea>
                                                     </div>
-                                                    <button type="submit" name="update" class="btn btn-success mt-3">Update</button>
+                                                    <button type="submit" onclick="return validate()" name="update" class="btn btn-success mt-3">Update</button>
                                                 </div>
                                                 <?php
                                             }
