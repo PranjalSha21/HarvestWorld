@@ -36,7 +36,7 @@ if(isset($_POST['addToCart'])){
         echo json_encode($addtocart);
         exit;
     } else {
-        echo json_encode($availableQuantity);
+        echo json_encode("Only ".$availableQuantity." Available");
         exit;
         // echo '<script>alert("Only ".$availableQuantity. " available")</script';
     }
@@ -82,5 +82,24 @@ if(intval($_GET['id']) != null)
         exit();
     }
 }
+
+if(intval($_GET['deliver_id']) != null)
+{
+    $d_id = intval($_GET['deliver_id']);
+    $user_id = $_SESSION['id']; 
+    $delete_query = "UPDATE orders SET status = 'DELIVERED' WHERE order_id = '$d_id' ";
+    if(mysqli_query($dbcon,$delete_query)){
+        $_SESSION['message'] = "Order Delivered Successfully";
+        $_SESSION['status'] = "success";
+        header("Location: ../adminorders.php");
+        exit();
+    } else {
+        $_SESSION['message'] = "Oops, Something went wrong!";
+        $_SESSION['status'] = "error";
+        header("Location: ../adminorders.php");
+        exit();
+    }
+}
+
 
 ?>

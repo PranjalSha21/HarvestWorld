@@ -1,19 +1,26 @@
 <?php include("include/header.php"); ?>
 <?php include("include/usersidebar.php"); ?>
-
+<?php 
+    if($_SESSION['user_type'] != 'USER'){
+        $_SESSION['message'] = "Log in to continue";
+        $_SESSION['status'] = "error";
+        header("Location: ./login.php");
+        exit();
+    }
+?>
 <div class="row mt-5">
     <?php 
-        $get_products = "SELECT * FROM products";
+        $get_products = "SELECT * FROM products WHERE product_quantity > 0";
         $dbcon = mysqli_connect("localhost","root","","harvest_world");
         $result = mysqli_query($dbcon, $get_products);
         if (mysqli_num_rows($result) >= 1) {
             while($row = mysqli_fetch_array($result)){ 
     ?>
     <div class="col-md-3 mb-5">
-        <div class="card mx-2 shadow" style="width: 18rem; height: 20rem;">
+        <div class="card mx-2 shadow" style="width: 17rem; height: 20rem;">
             <img src="<?php echo $row['product_image'] ?>" class="card-img-top shadow"  width="100" height="150">
             <div class="card-body text-center">
-                <h4 class="card-title"><?php echo $row['product_name'] ?></h5>
+                <h6 class="card-title"><?php echo $row['product_name'] ?></h6>
                 <h5 class="card-text">₹ <?php echo $row['product_price'] ?></h5>
             </div>
             <div class="card-body">

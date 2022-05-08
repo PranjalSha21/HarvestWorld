@@ -22,12 +22,12 @@
                       </a>
                     </li>
                       <li class="nav-item">
-                      <a class="nav-link" aria-current="page" href="cart.aspx">Cart
+                      <a class="nav-link" aria-current="page" href="cart.php">Cart
                           </a>
                        </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Build Your own!
+                      <a class="nav-link" href="models.php"aria-expanded="false" >
+                        Models
                       </a>
                     </li>
                     <?php 
@@ -37,7 +37,7 @@
                         <?php echo $_SESSION["name"]; ?>
                       </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="product.aspx?categories=CPU Panel">Profile</a></li>
+                        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                         <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                       </ul>
                     </li>

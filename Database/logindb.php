@@ -18,17 +18,17 @@ if(isset($_POST['login']))
                 header("Location: ../index.php");
                 exit();
             } else {
-                header("Location: ../admin/dashboard.php");
+                header("Location: ../dashboard.php");
                 exit();
             }
         
-            }else{
-                header("Location: ../index.php");
-                exit();
-            }
-    }else{
-
-    }
+        }else{
+            $_SESSION['message'] = "Wrong Password or Email";
+            $_SESSION['status'] = "error";
+            header("Location: ../login.php");
+            exit();
+        }
+}
 
 if(isset($_POST['register']))
 {
@@ -41,11 +41,38 @@ if(isset($_POST['register']))
     $register_query = "INSERT INTO users (name,phone,email,password,address) VALUES ('$name', '$phone', '$email', '$password', '$address')";
     if(mysqli_query($dbcon,$register_query))
     {
+        $_SESSION['message'] = "Registered in Successfully";
+        $_SESSION['status'] = "success";
         header("Location: ../login.php");
     }
     else
     {
+        $_SESSION['message'] = "Oops, Something went wrong";
+        $_SESSION['status'] = "error";
         header("Location: index.php");
+    }
+
+}
+
+if(isset($_POST['update']))
+{   
+    $id = $_SESSION['id'];
+    $name= $_POST['name'];
+    $phone= $_POST['phone'];
+    $email= $_POST['email'];
+    $address= $_POST['address'];
+    $update_query = "UPDATE users SET name = '$name',phone = '$phone' ,email = '$email',address = '$address' WHERE id = $id";
+    if(mysqli_query($dbcon,$update_query))
+    {
+        $_SESSION['message'] = "Updated in Successfully";
+        $_SESSION['status'] = "success";
+        header("Location: ../profile.php");
+    }
+    else
+    {
+        $_SESSION['message'] = "Oops, Something went wrong";
+        $_SESSION['status'] = "error";
+        header("Location: ../index.php");
     }
 
 }

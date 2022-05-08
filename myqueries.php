@@ -8,34 +8,17 @@
         exit();
     }
 ?>
+<h1 class="text-center mt-5">
+    My Queries
+</h1>
 <br>
 <br>
-<h3 class="text-center">Ask Your Queries here!</h3>
-<br>
-<br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <form action="Database/queriesdb.php" method="post">
-            <div class="form-floating">
-                <textarea class="form-control" required placeholder="Leave a comment here" name="query" id="floatingTextarea2" style="height: 100px"></textarea>
-                <label for="floatingTextarea2">Queries</label>
-            </div><br>
-            <div class="d-grid gap-2">
-                <button class="btn btn-success float-right" name="queries_submit" type="submit">POST</button>
-            </div>
-            </form>
-        </div>
-    </div>
-</div>
-<br>
-<hr>
 <div class="container"> 
     <div class="row">
         <div class="col-md-12">
-
             <?php 
-                $get_queries = "SELECT * FROM queries ORDER BY id DESC";
+                $id = $_SESSION['id'];
+                $get_queries = "SELECT * FROM queries WHERE user_id= '$id'";
                 $dbcon = mysqli_connect("localhost","root","","harvest_world");
                 $result = mysqli_query($dbcon, $get_queries);
                 if (mysqli_num_rows($result) >= 1) {
@@ -44,7 +27,6 @@
                         <div class="card mb-3">
                             <div class="card-header">
                                 <?= $row['user_name']; ?>
-                                <span class="float-right"><?= $row['time']; ?></span>
                             </div>
                             <div class="card-body">
                                 <p class="card-title"><?php echo $row['query']; ?></p>
