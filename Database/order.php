@@ -36,7 +36,7 @@ if(isset($_POST['addToCart'])){
         echo json_encode($addtocart);
         exit;
     } else {
-        echo json_encode($availableQuantity);
+        echo json_encode("Only ".$availableQuantity." Available");
         exit;
         // echo '<script>alert("Only ".$availableQuantity. " available")</script';
     }

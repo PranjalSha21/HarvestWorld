@@ -14,7 +14,6 @@
         <td>Total</td>
         <td>Status</td>
         <td>View</td>
-        <td></td>
       </tr>
     </thead>
     <tbody>
@@ -38,11 +37,11 @@
         <td > <a href="orderview.php?id=<?php echo $row['order_id'] ?>"><button type="submit" class="btn btn-success">VIEW</button></a>
         <?php if($row['status']=='PENDING'){
 ?>
-             <a href="./Database/payment.php?delete_id=<?php echo $row['order_id'] ?>"><button type="submit" name="delete_product" class="btn btn-danger">CANCEL ORDER</button></a></td>
+             <a href="./Database/payment.php?delete_id=<?php echo $row['order_id'] ?>"><button type="submit" name="delete_product" class="btn btn-danger">CANCEL ORDER</button></a>
         <?php
 
         }
-        ?>
+        ?></td>
       </tr>
      <?php 
             }

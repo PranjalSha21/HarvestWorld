@@ -10,10 +10,10 @@
             while($row = mysqli_fetch_array($result)){ 
     ?>
     <div class="col-md-3 mb-5">
-        <div class="card mx-2 shadow" style="width: 18rem; height: 20rem;">
+        <div class="card mx-2 shadow" style="width: 17rem; height: 20rem;">
             <img src="<?php echo $row['product_image'] ?>" class="card-img-top shadow"  width="100" height="150">
             <div class="card-body text-center">
-                <h4 class="card-title"><?php echo $row['product_name'] ?></h5>
+                <h6 class="card-title"><?php echo $row['product_name'] ?></h6>
                 <h5 class="card-text">₹ <?php echo $row['product_price'] ?></h5>
             </div>
             <div class="card-body">
